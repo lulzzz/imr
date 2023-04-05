@@ -1,0 +1,91 @@
+﻿<Window x:Class="IMR.Clients.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IMR.Clients.WPF"
+        mc:Ignorable="d"
+        Title="Industrial Meters Reader" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Window.Resources>
+        <local:TabSizeConverter x:Key="tabSizeConverter" />
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Width">
+                <Setter.Value>
+                    <MultiBinding Converter="{StaticResource tabSizeConverter}">
+                        <Binding RelativeSource="{RelativeSource Mode=FindAncestor,
+            AncestorType={x:Type TabControl}}" />
+                        <Binding RelativeSource="{RelativeSource Mode=FindAncestor,
+            AncestorType={x:Type TabControl}}" Path="ActualWidth" />
+                    </MultiBinding>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+    </Window.Resources>
+    <TabControl>
+        <TabItem Header="Actris">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="200" Margin="3" Padding="0" Content="IP:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="Port:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="Serial:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="Client ID:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="Password:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="Physical Addr:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="Logical Addr:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="CT:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="PT:"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <TextBox x:Name="actarisIPTextBox" Width="200" Margin="3" Padding="5"/>
+                    <TextBox x:Name="actarisPortTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="actarisSerialTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="actarisClientIDTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="actarisPasswordTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="actarisPhysicalAddrTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="actarisLogicalAddrTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="actarisCTTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="actarisPTTextBox" Width="75" Margin="3" Padding="5"/>
+                    <Button x:Name="actarisReadRegistersButton" Content="Read Registers" Width="90" Margin="3" Padding="0" Click="ActarisReadRegistersButton_Click"/>
+                    <Button x:Name="actarisReadProfileButton" Content="Read Profile" Width="90" Margin="3" Padding="0" Click="ActarisReadProfileButton_Click"/>
+                </StackPanel>
+                <TextBox x:Name="actarisOutputTextBlock" Padding="5" Grid.Row="2" FontSize="12" FontFamily="Consolas"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Edmi">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="200" Margin="3" Padding="0" Content="IP:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="Port:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="Serial:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="Username:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="Password:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="CT:"/>
+                    <Label Width="75" Margin="3" Padding="0" Content="PT:"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <TextBox x:Name="edmiIPTextBox" Width="200" Margin="3" Padding="5"/>
+                    <TextBox x:Name="edmiPortTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="edmiSerialTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="edmiUsernameTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="edmiPasswordTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="edmiCTTextBox" Width="75" Margin="3" Padding="5"/>
+                    <TextBox x:Name="edmiPTTextBox" Width="75" Margin="3" Padding="5"/>
+                    <Button x:Name="edmiReadRegistersButton" Content="Read Registers" Width="90" Margin="3" Padding="0" Click="EdmiReadRegistersButton_Click"/>
+                    <Button x:Name="edmiReadProfileButton" Content="Read Profile" Width="90" Margin="3" Padding="0" Click="EdmiReadProfileButton_Click"/>
+                </StackPanel>
+                <TextBox x:Name="edmiOutputTextBlock" Padding="5" Grid.Row="2" FontSize="12" FontFamily="Consolas"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

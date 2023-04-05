@@ -1,0 +1,10 @@
+root = true
+
+# All files
+[*]
+indent_style = space
+file_header_template = Authored by: MohammadAmin Mohammadi (https://github.com/mamohammadi)
+
+# Xml files
+[*.xml]
+indent_size = 2
