@@ -1,3 +1,5 @@
+// Authored by: MohammadAmin Mohammadi (https://github.com/mamohammadi)
+
 #include "Hdlc.h"
 
 // Send:

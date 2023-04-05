@@ -1,3 +1,5 @@
+// Authored by: MohammadAmin Mohammadi (https://github.com/mamohammadi)
+
 #include "Edmi.h"
 
 EDMI_TYPE EdmiGetDataType(EDMI_TYPE type)

@@ -1,3 +1,5 @@
+// Authored by: MohammadAmin Mohammadi (https://github.com/mamohammadi)
+
 #pragma once
 // Disable struct padding
 #pragma pack(push,1)

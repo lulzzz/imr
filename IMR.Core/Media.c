@@ -1,3 +1,5 @@
+// Authored by: MohammadAmin Mohammadi (https://github.com/mamohammadi)
+
 #include "Media.h"
 
 MEDIA_ERROR WriteAllToMedia(WRITE_ALL_TO_MEDIA_DELEGATE callback, char* buffer, int length)

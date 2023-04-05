@@ -1,3 +1,5 @@
+// Authored by: MohammadAmin Mohammadi (https://github.com/mamohammadi)
+
 #include "Dlms.h"
 
 DLMS_ERROR_CODE DlmsRead(char** buffer, int* remLen, char** value, int readLen)
